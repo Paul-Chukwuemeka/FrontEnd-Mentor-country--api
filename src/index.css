@@ -1,13 +1,97 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+.dark {
+  background-color: hsl(207, 26%, 17%);
+  color: white;
+}
+.card-dark {
+  background-color: hsl(209, 23%, 22%);
+}
+body {
+  width: 100vw;
+  height: 100vh;
+}
+option {
+  background-color: transparent;
+}
+.countries {
+  width: 98%;
+  margin: auto;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+.countries div {
+  box-shadow: 0px 2px 2px black;
+  border-radius: 5px;
+}
+img{
+  border-radius: 10px 10px 0px 0px;
+
+}
+.details {
+  padding: 10px;
+  box-shadow: 0px 2px 5px black;
+}
+@media (max-width: 600px) {
+  .countries {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  .countries>div {
+    width: 90%;
+    height: fit-content;
+  }
+  .countries img {
+    width: 100%;
+    height: 300px;
+  }
+  .details{
+    width: 100%;
+
+    border-radius: 0px;
+  }
+}
+@media (min-width: 600px) {
+  .countries {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  .countries {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1100px) {
+  .countries {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 1350px) {
+  .countries {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+img {
+  width: 100%;
+  height: 150px;
+}
+.nav-bar {
+  height: 40px;
+  border: solid;
+  width: 100%;
 }
