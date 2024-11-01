@@ -52,7 +52,7 @@ const Filter = () => {
         value={input}
         onChange={handleInputChange}
         placeholder="Search for a country..."
-        className={ darkMode ? "border-none bg-[#2b3945] w-[500px] rounded px-5 py-1 focus:border-[2px] focus:outline-none" :"border bg-white w-[500px] rounded-lg px-5 py-1 focus:border-[2px] focus:outline-none"  }
+        className={ darkMode ? "border-none bg-[#2b3945] sm:w-[70%] rounded px-5 py-3 focus:border-[2px] focus:outline-none" :"border bg-white w-[500px] rounded-lg px-5 py-1 focus:border-[2px] focus:outline-none"  }
       />
       <select
         className={ darkMode ? "bg-[#2b3945]  p-3  rounded-lg w-fit":"bg-white text-[#2b3945] p-3 border rounded-lg w-fit"}

@@ -14,7 +14,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="nav flex justify-between items-center px-[50px] py-5 shadow-2xl w-[98.9vw]">
+    <div className="nav flex justify-between items-center px-[50px] py-5 shadow-2xl w-full">
       <h1 className="text-3xl font-bold text-center">Where in the world?</h1>
 
       <button className=" outline-none" onClick={() => setDarkMode(!darkMode)}>
