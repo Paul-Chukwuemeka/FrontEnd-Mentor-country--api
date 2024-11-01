@@ -79,7 +79,7 @@ img{
     grid-template-columns: repeat(4, 1fr);
   }
 }
-@media (min-width: 1350px) {
+@media (min-width: 1400px) {
   .countries {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
