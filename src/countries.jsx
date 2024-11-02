@@ -106,7 +106,7 @@ const Countries = () => {
                         "flag of " +
                         country.name.common
                       }
-                      className="w-[80%] m-auto h-auto lg:w-[500px] lg:rounded-none lg:h-[300px]"
+                      className="w-[80%] m-auto h-auto lg:w-[500px] lg:rounded-none lg:h-[300px] border border-2"
                     />
                     <div className="w-[80%] m-auto mt-3 text-xl p-3 lg:w-[50%] flex flex-col flex-wrap gap-3 lg:h-[300px]">
                       <h1 className="text-4xl">
@@ -163,7 +163,7 @@ const Countries = () => {
           {countryList.map((country) => {
             return (
               <div
-                className="card"
+                className="card border shadow-md"
                 key={country.name.common}
                 onClick={() => {
                   setCountryInfo(
