@@ -22,7 +22,6 @@ option {
   background-color: transparent;
 }
 .countries {
-  width: 98%;
   margin: auto;
   display: grid;
   gap: 20px;
@@ -61,7 +60,7 @@ img{
     border-radius: 0px;
   }
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .countries {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

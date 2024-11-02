@@ -159,7 +159,7 @@ const Countries = () => {
           </div>
         </>
       ) : (
-        <div className="countries ">
+        <div className="countries p-[50px]">
           {countryList.map((country) => {
             return (
               <div
