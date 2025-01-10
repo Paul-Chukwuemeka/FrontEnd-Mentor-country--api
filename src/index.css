@@ -38,7 +38,7 @@ img{
 .details {
   padding: 10px;
 }
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .countries {
     display: flex;
     flex-direction: column;
@@ -58,9 +58,10 @@ img{
     border-radius: 0px;
   }
 }
-@media (min-width: 700px) {
+@media (min-width: 600px) {
   .countries {
     display: grid;
+    gap: 10px;
     grid-template-columns: repeat(2, 1fr);
   }
 }

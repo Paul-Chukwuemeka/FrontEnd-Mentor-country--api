@@ -6,15 +6,11 @@ import React, {
 import "./index.css";
 import { SearchContext } from "./App";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowLeft,
-  faTruckPlane,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 const Countries = () => {
   const {
-    input,
-    region,
     countries,
     setCountries,
     countryList,
@@ -22,43 +18,24 @@ const Countries = () => {
     info,
     setInfo,
     darkMode,
-    setDarkMode,
   } = useContext(SearchContext);
   const [countryInfo, setCountryInfo] =
     useState("");
 
-  const url =
-    "https://restcountries.com/v3.1/all";
   const fetchData = async () => {
     try {
-      const response = await fetch(url);
-      const data = await response.json();
+      const response = await axios.get(
+        "./data/data.json"
+      );
+      const data = response.data;
       setCountries(data);
-      if (
-        document.body.classList.contains("dark")
-      ) {
-        document
-          .querySelectorAll(".card")
-          .forEach((card) => {
-            card.classList.add(".card-dark");
-          });
-      } else {
-        document
-          .querySelectorAll(".card")
-          .forEach((card) => {
-            card.classList.remove(".card-dark");
-          });
-      }
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
   useEffect(() => {
     fetchData();
-  }, []);
-
-  useEffect(() => {
     setCountryList(countries);
   }, []);
 
@@ -67,6 +44,19 @@ const Countries = () => {
       return country.name.common === countryInfo;
     }
   );
+  if (document.body.classList.contains("dark")) {
+    document
+      .querySelectorAll(".card")
+      .forEach((card) => {
+        card.classList.add(".card-dark");
+      });
+  } else {
+    document
+      .querySelectorAll(".card")
+      .forEach((card) => {
+        card.classList.remove(".card-dark");
+      });
+  }
   return (
     <>
       {info ? (
@@ -106,7 +96,7 @@ const Countries = () => {
                         "flag of " +
                         country.name.common
                       }
-                      className="w-[80%] m-auto h-auto lg:w-[500px] lg:rounded-none lg:h-[300px] border border-2"
+                      className="w-[80%] m-auto h-auto lg:w-[500px] lg:rounded-none lg:h-[300px] border-2"
                     />
                     <div className="w-[80%] m-auto mt-3 text-xl p-3 lg:w-[50%] flex flex-col flex-wrap gap-3 lg:h-[300px]">
                       <h1 className="text-4xl">
