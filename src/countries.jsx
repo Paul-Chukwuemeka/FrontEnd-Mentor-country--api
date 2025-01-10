@@ -88,7 +88,7 @@ const Countries = () => {
                 return (
                   <div
                     key={country.name.common}
-                    className="lg:flex  lg:justify-between"
+                    className="lg:flex lg:justify-between"
                   >
                     <img
                       src={country.flags.png}

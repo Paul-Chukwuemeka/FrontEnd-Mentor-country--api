@@ -2,11 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 .dark {
   background-color: hsl(207, 26%, 17%);
   color: white;
@@ -26,10 +22,11 @@ option {
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr;
+  width: 100vw;
 }
 .countries div {
-
   border-radius: 5px;
+  cursor: pointer;
 }
 img{
   border-radius: 5px 5px 0px 0px;
@@ -65,7 +62,7 @@ img{
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (min-width: 1190px) {
+@media (min-width: 940px) {
   .countries {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
